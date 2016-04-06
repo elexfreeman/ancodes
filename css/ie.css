@@ -1,0 +1,44 @@
+﻿.header{
+	background:none;
+	filter:progid:dximagetransform.microsoft.alphaimageloader(src='images/img16.jpg', sizingmethod='scale');
+}
+.home-page .header{
+	filter:0;
+}
+.header .top-line{
+	background: url(../images/bg-header.png);
+}
+.header .nav-line{
+	background: url(../images/bg-header02.png);
+}
+.gallery-list a .mask{
+	background: url(../images/bg-gallery.png);
+}
+.promo-box .application,
+.promo-box .see-more,
+.promo-box ul a{
+	text-decoration:underline;
+}
+.promo-box .application:hover,
+.promo-box .see-more:hover,
+.promo-box ul a:hover{
+	text-decoration:none;
+}
+.header .reservation .client{
+	background: url(../images/bg-reservation07.png);
+}
+.reservation .agency{
+	background:none;
+	filter:progid:dximagetransform.microsoft.alphaimageloader(src='images/bg-reservation02.jpg', sizingmethod='scale');
+}
+.photo-gallery .mask{
+	background: url(../images/bg-gallery02.png);
+}
+.reservation-list a,
+.nav ul,
+.header .reservation .agency .enter {
+	letter-spacing:-0.5px;
+}
+.header .reservation .agency .enter {
+	padding-left:44px;
+}
