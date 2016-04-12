@@ -53,14 +53,10 @@
                                             </div>
                                         </div>
                                     </a>
-
-
                                 </li>
-
                             <?php
                             }
                             ?>
-
                         </ul>
                     </div>
                     <?php
@@ -73,89 +69,36 @@ foreach($cities as $city ) {
         <span class="prev-text"></span>
         <span class="next-text"></span>
 
-        <div class="main-city-info">
-            <h2><?php echo $city->title; ?></h2>
+        <div class="city-info">
+            <div class="main-city-info main-city-info<?php echo $i ?>">
+                <h2><?php echo $city->title; ?></h2>
 
-            <div class="resorts-nav">
-                <h3>Города <sup class="num"><?php echo count($city->s_curorts_field); ?></sup></h3>
-                <ul class="resorts-list">
-                    <?php
-                    $j = 0;
-                    foreach ($city->s_curorts_field as $curort) {
-                        $j++;
-                        $curort = GetCurortInfo($curort->ID)
-                        ?>
-                        <li>
-                            <a onclick="javascript: show_me(<?php echo $i . $j; ?>);"
-                               class="resort-link0<?php echo $i . $j; ?>"><?php echo $curort->title; ?></a>
-                        </li>
+                <div class="resorts-nav">
+                    <h3>Города <sup class="num"><?php echo count($city->s_curorts_field); ?></sup></h3>
+                    <ul class="resorts-list">
                         <?php
-                    }
-                    ?>
-                </ul>
-            </div>
-            <div class="description-block">
-                <h3>О курорте</h3>
-                <ul class="photos-list">
-                    <?php
-                    foreach ($city->s_gallery as $img) {
+                        $j = 0;
+                        foreach ($city->s_curorts_field as $curort) {
+                            $j++;
+                            $curort = GetCurortInfo($curort->ID)
+                            ?>
+                            <li><a onclick="javascript: show_me('<?php echo $i; ?>','<?php echo $j; ?>');"
+                                   class="resort-link0<?php echo $i . $j; ?>"><?php echo $curort->title; ?></a></li>
+                            <?php
+                        }
                         ?>
-                        <li>
-                            <div class="image">
-                                <a class="singlegal" rel="2" href="<?php echo $img['url']; ?>">
-                                <img src="<?php echo $img['url']; ?>" alt="" width="206">
-                                </a>
-                            </div>
-                        </li>
-                        <?php
-                    }
-                    ?>
-                </ul>
-                <?php echo $city->s_about; ?>
-            </div>
-        </div>
-        <?php
-        $j = 0;
-        foreach ($city->s_curorts_field as $curort) {
-            $j++;
-            $curort = GetCurortInfo($curort->ID)
-            ?>
-
-            <div class="resort-info resort<?php echo $i . $j; ?>">
-                <ul class="title-breadcrumbs">
-                    <li><a onclick="javascript: show_me('all');" class="main-link"><?php echo $city->title; ?></a></li>
-                    <li class="popup-holder">
-                        <span><?php echo $curort->title; ?></span>
-                        <a href="#" class="open">nav</a>
-
-                        <div class="popup">
-                            <ul>
-                                <?php
-                                $jj = 0;
-                                foreach ($city->s_curorts_field as $curort2) {
-                                    $jj++;
-                                    $curort2 = GetCurortInfo($curort2->ID)
-                                    ?>
-                                    <li><a onclick="javascript: show_me(<?php echo $i . $jj; ?>);"
-                                           class="resort-link<?php echo $i . $jj; ?>"><?php echo $curort2->title; ?></a>
-                                    </li>
-                                    <?php
-                                }
-                                ?>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-                <div class="text-block">
-                    <h3>О городе</h3>
+                    </ul>
+                </div>
+                <div class="description-block">
+                    <h3>О курорте</h3>
                     <ul class="photos-list">
                         <?php
-                        foreach ($curort->c_gallery as $img) {
+                        foreach ($city->s_gallery as $img) {
                             ?>
                             <li>
                                 <div class="image">
                                     <a class="singlegal" rel="2" href="<?php echo $img['url']; ?>">
-                                    <img src="<?php echo $img['url']; ?>" alt="" width="206" height="105">
+                                        <img src="<?php echo $img['url']; ?>" alt="" width="206">
                                     </a>
                                 </div>
                             </li>
@@ -163,31 +106,81 @@ foreach($cities as $city ) {
                         }
                         ?>
                     </ul>
-                    <?php echo $curort->c_description; ?>
+                    <?php echo $city->s_about; ?>
                 </div>
-
             </div>
             <?php
-        }
-        ?>
+            $j = 0;
+            foreach ($city->s_curorts_field as $curort) {
+                $j++;
+                $curort = GetCurortInfo($curort->ID)
+                ?>
+                <div class="resort-info rr-i-<?php echo $i; ?> resort<?php echo $i . $j; ?>">
+                    <ul class="title-breadcrumbs">
+                        <li><a onclick="javascript: show_me('all','<?php echo $i; ?>');" class="main-link"><?php echo $city->title; ?></a>
+                        </li>
+                        <li class="popup-holder">
+                            <span><?php echo $curort->title; ?></span>
+                            <a href="#" class="open">nav</a>
+
+                            <div class="popup">
+                                <ul>
+                                    <?php
+                                    $jj = 0;
+                                    foreach ($city->s_curorts_field as $curort2) {
+                                        $jj++;
+                                        $curort2 = GetCurortInfo($curort2->ID)
+                                        ?>
+                                        <li>
+                                            <a onclick="javascript: show_me('<?php echo $i; ?>','<?php echo $jj; ?>');"
+                                               class="resort-link<?php echo $i . $jj; ?>">
+                                                <?php echo $curort2->title; ?>
+                                            </a>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="text-block">
+                        <h3>О городе</h3>
+                        <ul class="photos-list">
+                            <?php
+                            foreach ($curort->c_gallery as $img) {
+                                ?>
+                                <li>
+                                    <div class="image">
+                                        <a class="singlegal" rel="2" href="<?php echo $img['url']; ?>">
+                                            <img src="<?php echo $img['url']; ?>" alt="" width="206" height="105">
+                                        </a>
+                                    </div>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                        <?php echo $curort->c_description; ?>
+                    </div>
+
+                </div>
+                <?php
+            }
+            ?>
+        </div>
     </div>
 
     <?php
 }
     ?>
-
-
                     <aside class="sidebar">
-
                         <?php tplWeather(); ?>
                         <?php tplReviewsRight(); ?>
-
                     </aside>
                 </div>
             </div>
         </section>
         <?php tplFooter(); ?>
     </div>
-
-
 <?php get_footer(); ?>

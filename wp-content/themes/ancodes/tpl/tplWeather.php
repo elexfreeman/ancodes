@@ -26,7 +26,7 @@ if ($temp>0) {$temp='+'.$temp;}
     <ul id="weather-slider">
         <li>
             <div class="title">
-                <a href="#" class="city">Барселона,</a>
+                <span href="#" class="city">Барселона,</span>
                 <span><?php echo WeatherConvertDate(date("y-m-d")); ?></span>
             </div>
             <div class="info-holder">
@@ -43,7 +43,7 @@ if ($temp>0) {$temp='+'.$temp;}
         </li>
         <li>
             <div class="title">
-                <a href="#" class="city">Льорет-де-Мар,</a>
+                <span href="#" class="city">Льорет-де-Мар,</span>
                 <span><?php echo WeatherConvertDate(date("y-m-d")); ?></span>
             </div>
             <div class="info-holder">

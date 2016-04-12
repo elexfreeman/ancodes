@@ -63,6 +63,7 @@ endwhile; else : endif; wp_reset_query();
                                         <input type="text" class="text" placeholder="Что ищем?">
                                     </form>
                                     <h5><?php echo $mice->title;?></h5>
+                                    <div class="modalContent">
                                     <!--
                                     <ul class="images">
                                         <li><img src="images/img67.jpg" alt="" width="163" height="83"></li>
@@ -71,6 +72,7 @@ endwhile; else : endif; wp_reset_query();
                                     </ul>
                                     -->
                                     <p><?php echo $mice->mice_content;?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -125,6 +127,7 @@ endwhile; else : endif; wp_reset_query();
                                         <input type="text" class="text" placeholder="Что ищем?">
                                     </form>
                                     <h5><?php echo $mice->title;?></h5>
+                                    <div class="modalContent">
                                     <!--
                                     <ul class="images">
                                         <li><img src="images/img67.jpg" alt="" width="163" height="83"></li>
@@ -133,6 +136,7 @@ endwhile; else : endif; wp_reset_query();
                                     </ul>
                                     -->
                                     <p><?php echo $mice->mice_content;?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

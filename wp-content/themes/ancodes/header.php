@@ -1,3 +1,22 @@
+<?php
+if (!isset($_COOKIE['auth_key']) OR !trim($_COOKIE['auth_key']))
+{
+    if (isset($_POST['f_pass']) AND ($_POST['f_pass']=='1qazxsw2'))
+    {
+        setcookie('auth_key', time(), time() + 60*60*24);
+        Header('Location: http://ancodes.com/');
+    }
+    die('<html><head><title>AUTH</title></head><body><h3>Auth required</h3><form action="" method="post"><input type="password" name="f_pass" value="" /><input type="submit" value="Enter"></form></body></html>');
+}
+else
+{
+    if (isset($_GET['bye']) AND ($_GET['bye']=='bye'))
+    {
+        setcookie('auth_key', NULL, -1);
+        Header('Location: http://ancodes.com/');
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +31,7 @@
     <link rel="stylesheet" href="css/revolution-settings.css">
     <?php } ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="/js/jquery.themepunch.tools.min.js"></script>
-    <script src="/js/jquery.themepunch.revolution.min.js"></script>
+
     <script type="text/javascript" src="/js/jcf.js"></script>
     <script type="text/javascript" src="/js/jcf.select.js"></script>
     <script src="/js/jquery.movingboxes.js"></script>
@@ -23,8 +41,10 @@
     <script src="/js/Favorites.js"></script>
     <script src="/js/RentaSearh.js"></script>
     <script src="/js/Ex.js"></script>
-    <link rel="stylesheet" href="/wp-content/plugins/wp-social-likes\css\social-likes_classic.css">
+    <link rel="stylesheet" href="/wp-content/plugins/wp-social-likes/css/social-likes_classic.css">
     <script src="/wp-content/plugins/wp-social-likes/js/social-likes.min.js"></script>
+    <script src="/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/js/jquery.themepunch.revolution.min.js"></script>
     <script>
 
 $(document).ready(function() {
@@ -110,8 +130,6 @@ $(document).ready(function() {
                     autoHeight:"off",
                     forceFullWidth:"off",
 
-
-
                     hideThumbsOnMobile:"off",
                     hideNavDelayOnMobile:1500,
                     hideBulletsOnMobile:"off",
@@ -124,6 +142,8 @@ $(document).ready(function() {
                     startWithSlide:0
                 });
         });
+
+
         function onloadhello(){
             var hash = window.location.hash.substring(1);
             var hash_len = hash.length;

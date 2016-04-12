@@ -10,7 +10,21 @@
                         </div>
                         <ul class="news-block-list">
                             <?php
-                            $args = array('posts_per_page' => 300, 'post_type' => 'news', 'post_status' => 'publish');
+                            if(!is_user_logged_in())  $args = array('posts_per_page' => 300, 'post_type' => 'news', 'post_status' => 'publish',
+                                'meta_query'	=> array(
+                                    // 'relation'		=> 'AND',
+                                    array(
+                                        'key'	 	=> 'registered',
+                                        'value'	  	=> 1,
+                                        'compare' 	=> '!=',
+                                    ),
+                                    /*    array(
+                                            'key'	  	=> 'featured',
+                                            'value'	  	=> '1',
+                                            'compare' 	=> '=',
+                                        ),*/
+                                ) ); else $args = array('posts_per_page' => 300, 'post_type' => 'news', 'post_status' => 'publish' );
+
                             $the_query = new WP_Query( $args );
                             $p_id=1;
                             if( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query->the_post(); 
@@ -62,7 +76,21 @@ if ( isset($private) && $private == '1') { if ( is_user_logged_in() ) { ?>
     </div>
 
 <?php
-$args = array('posts_per_page' => 300, 'post_type' => 'news', 'post_status' => 'publish');
+if(!is_user_logged_in())  $args = array('posts_per_page' => 300, 'post_type' => 'news', 'post_status' => 'publish',
+    'meta_query'	=> array(
+        // 'relation'		=> 'AND',
+        array(
+            'key'	 	=> 'registered',
+            'value'	  	=> 1,
+            'compare' 	=> '!=',
+        ),
+        /*    array(
+                'key'	  	=> 'featured',
+                'value'	  	=> '1',
+                'compare' 	=> '=',
+            ),*/
+    ) ); else $args = array('posts_per_page' => 300, 'post_type' => 'news', 'post_status' => 'publish' );
+
 $the_query = new WP_Query( $args );
 $p_id=1;
 if( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query->the_post(); 

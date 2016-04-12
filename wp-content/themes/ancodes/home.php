@@ -6,7 +6,11 @@
             <div class="main-slider">
                 <div class="tp-banner-container">
                     <div class="tp-banner" >
-                        <?php putRevSlider("slider1"); ?>
+                        <?php
+                        putRevSlider("slider1");
+                       // putRevSlider("media-gallery-two5");
+                        ?>
+                        <?php if ( function_exists( 'get_smooth_slider' ) ) { get_smooth_slider(); } ?>
                        <!--
                         <ul>
                             <?php

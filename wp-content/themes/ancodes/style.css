@@ -49,7 +49,7 @@ select {
 	color:#000;
 	outline:none;
 	border-radius:0;
-
+	
 }
 textarea {
 	overflow: auto;
@@ -731,7 +731,7 @@ h4{
 .mb-slider .mb-panel {
 	margin: 0;
 	display: block;
-	cursor: pointer;
+	/*cursor: pointer;*/
 	float: left;
 	list-style: none;
 }
@@ -2629,4 +2629,15 @@ a.apartments-popup-link {
 	background: url(/images/bg-promo02.png) no-repeat;
 	-webkit-background-size: 100%;
 	background-size: 100%;
+}
+
+.modalContent
+{
+	height: 300px;
+	overflow: auto;
+}
+
+.Hb
+{
+	text-transform: capitalize;
 }

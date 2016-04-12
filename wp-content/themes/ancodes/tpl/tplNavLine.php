@@ -23,6 +23,6 @@
                 <li><a href="/ourcontakts/">Контакты</a></li>
             </ul>
         </nav>
-        <a href="/rent" class="search">search</a>
+        <a style="display: none" href="/rent" class="search">search</a>
     </div>
 </div>

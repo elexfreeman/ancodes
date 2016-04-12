@@ -35,7 +35,7 @@ if( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query-
                                         <span class="price"><?php  the_field( "e_price" ); ?></span>
                                     </div>
                                 </div>
-                                <span class="favorite">В избранное</span>
+                                <!--<span class="favorite">В избранное</span> -->
                             </li>
 
 <?php endwhile; else : endif; wp_reset_query(); ?>

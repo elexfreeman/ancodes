@@ -35,7 +35,6 @@ endwhile; else : endif; wp_reset_query();
                         <?php
                     }
                     ?>
-
                     <div class="info-popup custom-popup" id="exct<?php echo $info_turist->id; ?>">
                         <div class="title-holder">
                             <h2>Справочник туриста</h2>
@@ -62,6 +61,7 @@ endwhile; else : endif; wp_reset_query();
                                         <input type="text" class="text" placeholder="Что ищем?">
                                     </form>
                                     <h5><?php echo $info_turist->title;?></h5>
+                                    <div class="modalContent">
                                     <?php
                                     if (count($info_turist->s_gallery)>0)
                                     {
@@ -77,6 +77,7 @@ endwhile; else : endif; wp_reset_query();
                                     ?>
 
                                     <p><?php echo $info_turist->s_content;?></p>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -94,6 +95,7 @@ endwhile; else : endif; wp_reset_query();
             {
                 if($info_turist->exc_t_column=='В правую')
                 {
+
                     if($info_turist->show_in_main[0]=='Да')
                     {
                         ?>
@@ -128,6 +130,7 @@ endwhile; else : endif; wp_reset_query();
                                         <input type="text" class="text" placeholder="Что ищем?">
                                     </form>
                                     <h5><?php echo $info_turist->title;?></h5>
+                                    <div class="modalContent">
                                     <!--
                                     <ul class="images">
                                         <li><img src="images/img67.jpg" alt="" width="163" height="83"></li>
@@ -135,7 +138,8 @@ endwhile; else : endif; wp_reset_query();
                                         <li><img src="images/img69.jpg" height="83" width="163" alt=""></li>
                                     </ul>
                                     -->
-                                    <p><?php echo $info_turist->exct_content;?></p>
+                                    <p><?php echo $info_turist->s_content;?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -143,16 +147,8 @@ endwhile; else : endif; wp_reset_query();
                     </div>
                     <?php
                 }
-                if($info_turist->exc_t_column=='В левую')
-                {
-                    if($info_turist->show_in_main[0]=='Да')
-                    {
-                        ?>
-                        <li><a href="#info_turist<?php echo $info_turist->id; ?>" class="popup-btn2"><?php echo $info_turist->title;?></a></li>
-                        <?php
-                    }
-                    ?>
 
+                    ?>
                     <div class="info-popup custom-popup" id="info_turist<?php echo $info_turist->id; ?>">
                         <div class="title-holder">
                             <h2>Справочник туриста</h2>
@@ -179,6 +175,7 @@ endwhile; else : endif; wp_reset_query();
                                         <input type="text" class="text" placeholder="Что ищем?">
                                     </form>
                                     <h5><?php echo $info_turist->title;?></h5>
+                                    <div class="modalContent">
                                     <!--
                                     <ul class="images">
                                         <li><img src="images/img67.jpg" alt="" width="163" height="83"></li>
@@ -186,17 +183,17 @@ endwhile; else : endif; wp_reset_query();
                                         <li><img src="images/img69.jpg" height="83" width="163" alt=""></li>
                                     </ul>
                                     -->
-                                    <p><?php echo $info_turist->exct_content;?></p>
+                                    <p><?php echo $info_turist->s_content;?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <a href="javascript:parent.$.fancybox.close();" class="close">Close me</a>
                     </div>
                     <?php
-                }
             }
             ?>
         </ul>
     </div>
-    <a href="#exct0" class="see-more popup-btn2"><span>Смотреть весь справочник</span></a>
+    <a href="#info_turist0" class="see-more popup-btn2"><span>Смотреть весь справочник</span></a>
 </div>
