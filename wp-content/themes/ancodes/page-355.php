@@ -1,4 +1,18 @@
 <?php get_header(); ?>
+<script>
+    $(document).ready(function() {
+        $("a").each(function(i){
+            var names = $(this).attr("href");
+            if (names != '#'){
+                name = names.replace('#', "")
+                $(this).attr("id", name+'1');
+                //alert(name);
+            }
+        });
+
+
+    });
+</script>
     <div class="page">
         <?php GetSinglePageHeader();?>
         <section class="main">

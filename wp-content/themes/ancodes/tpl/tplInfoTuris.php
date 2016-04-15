@@ -6,7 +6,7 @@ $exc_i=0;
 if( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query->the_post();
 
     $info_turist = new stdClass();
-    $info_turist->id=$exc_i;
+    $info_turist->id=get_the_ID();
     $info_turist->title=get_the_title();
     $info_turist->exc_t_column=get_field('exc_t_column');
     $info_turist->s_content=get_field('s_content');
@@ -75,7 +75,6 @@ endwhile; else : endif; wp_reset_query();
                                         echo '</ul>';
                                     }
                                     ?>
-
                                     <p><?php echo $info_turist->s_content;?></p>
                                   </div>
                                 </div>
@@ -87,7 +86,6 @@ endwhile; else : endif; wp_reset_query();
                 }
             }
             ?>
-
         </ul>
         <ul>
             <?php

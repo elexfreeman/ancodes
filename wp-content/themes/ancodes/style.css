@@ -134,14 +134,14 @@ h4{
 	background-size:cover;
 }
 .home-page .header{
-	height:584px;
+	/*height:584px;*/
 }
 .header .wrapper{
 	position:relative;
 	z-index: 10;
 }
 .main-slider{
-	position: absolute;
+	/*position: absolute;*/
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -188,6 +188,7 @@ h4{
 }
 .tp-banner {
 	height: 585px !important;
+	/*width: 1000px;*/
 }
 .language-form{
 	float:left;
@@ -1527,7 +1528,7 @@ background-position: repeat, no-repeat;
 	background: #fff;
 }
 /* feedback-form */
-.feedback-form .text{
+.feedback-form .text, .wpcf7-form input{
 	display: block;
 	width: 320px;
 	height: 40px;
@@ -1541,11 +1542,11 @@ background-position: repeat, no-repeat;
 	box-shadow: 0 1px 1px #cccfd3;
 	margin: 0 0 15px;
 }
-.feedback-form .text:focus{
+.feedback-form .text:focus , .wpcf7-form input:focus{
 	border-color: #a7b8c6;
 	box-shadow: 0 1px 1px rgba(168, 184, 198, 0.75)
 }
-.feedback-form .textarea{
+.feedback-form .textarea .wpcf7-form textarea {
 	width: 640px;
 	height: 200px;
 	resize:none;
@@ -1555,7 +1556,7 @@ background-position: repeat, no-repeat;
 	color: #7a828f;
 }
 .feedback-form .submit,
-.sign-form .submit{
+.sign-form .submit , .wpcf7-form-control.wpcf7-submit{
 	font-size: 15px;
 	line-height: 38px;
 	font-weight: 700;
@@ -2640,4 +2641,28 @@ a.apartments-popup-link {
 .Hb
 {
 	text-transform: capitalize;
+}
+
+.screen-reader-response
+{
+	padding: 20px;
+	font-weight: bold;
+}
+
+.wpcf7-mail-sent-ok
+{
+	display: none;
+}
+
+#wpcf7-f2370-o1   textarea
+{
+	background: #fff;
+	border-radius: 2px;
+	color: #3d5060;
+	font-size: 15px;
+	line-height: 19px;
+	padding: 9px 12px 10px;
+	border: 1px solid #cccfd3;
+	box-shadow: 0 1px 1px #cccfd3;
+	margin: 0 0 15px;
 }

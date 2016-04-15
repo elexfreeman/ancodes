@@ -52,6 +52,7 @@
         $mainimg = $r->r_img;
         $r_params=  $r->r_params;
         $p_id++;?>
+
         <div class="photo-gallery-popup apartments-popup" id="apartments-popup<?php echo $p_id; ?>" title="Вилла">
             <span class="prev-text"><?php echo $prev->the_title; ?><br/><?php  echo $prev->r_price; ?>.</span>
             <span class="next-text"><?php echo $next->the_title; ?><br/><?php  echo $next->r_price; ?>.</span>
@@ -73,7 +74,7 @@
                     }
                     ?>
                 </h2>
-                <span class="rent">Локация <span class="Hb"><?php  if($r->r_place=='new') echo urldecode($r->r_customplace); else
+                <span class="rent">Локация <span class="Hb"><?php   if($r->r_place=='new') echo $r->r_customplace; else
                     {
                         $r->r_city=explode('/',urldecode($r->r_city));
 
@@ -95,8 +96,7 @@
                         <li <?php if(in_array('Балкон/Терраса',$r_params)) echo ' class="staffed"'; ?>>Балкон/Терраса</li>
                         <li <?php if(in_array('Барбекю',$r_params)) echo ' class="staffed"'; ?>>Барбекю</li>
                         <li <?php if(in_array('Бассейн',$r_params)) echo ' class="staffed"'; ?>>Бассейн</li>
-                        <!--<li <?php if(in_array('Детский бассейн',$r_params)) echo ' class="staffed"'; ?>>Детский бассейн</li>
-                        <li <?php if(in_array('Закрытый бассейн',$r_params)) echo ' class="staffed"'; ?>>Закрытый бассейн</li>-->
+
                         <li <?php if(in_array('Камин',$r_params)) echo ' class="staffed"'; ?>>Камин</li>
                         <li <?php if(in_array('Сауна',$r_params)) echo ' class="staffed"'; ?>>Сауна</li>
                         <li <?php if(in_array('Джакузи',$r_params)) echo ' class="staffed"'; ?>>Джакузи</li>
@@ -121,24 +121,41 @@
                             <span class="number"><?php  echo $r->rooms; ?></span>
                         </li>
                     </ul>
-                    <h4>Фотографии</h4>
-                <pre>
-                    <?php
-                    $r_photos = $r->r_photos;
 
-                    ?>
-                </pre>
-                    <ul class="photo-list">
-                        <?php
-                        foreach($r_photos as $img)
-                        {
-                            ?>
-                            <li><a class="singlegal" rel="<?php echo $p_id; ?>" href="<?php echo $img['sizes']['large']; ?>"><img src="<?php echo $img['sizes']['medium']; ?>" height="105" width="206" alt=""></a></li>
+                    <?php if($r->r_beach_length!='') {?>
+                        <h4>Расстояние до пляжа: <?php echo $r->r_beach_length;  ?> м.</h4>
+                    <?php }?>
+
+                        <h4>Фотографии</h4>
+                        <ul class="photo-list">
                             <?php
-                        }
-                        ?>
+                            foreach($r->r_photos as $img)
+                            {
+                                ?>
+                                <li>
+                                    <a class="singlegal<?php echo $p_id; ?>" rel="<?php echo $p_id; ?>"
+                                       href="<?php echo $img['sizes']['large']; ?>">
+                                        <img src="<?php echo $img['sizes']['medium']; ?>"
+                                                                                         height="105" width="206" alt="">
+                                    </a>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                            <script>
+                                $(document).ready(function() {
+                                    $(".singlegal<?php echo $p_id; ?>").fancybox({
+                                        openEffect	: 'none',
+                                        closeEffect	: 'none'
+                                    });
+                                });
+                            </script>
+                        </ul>
 
-                    </ul>
+
+
+
+
                     <h4>Описание</h4>
                     <?php echo $r->r_descripton; ?><?php $r_other = $r->r_other;
                     if ($r_other) {

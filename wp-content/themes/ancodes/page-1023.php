@@ -11,8 +11,12 @@
                         </div>
                         <ul class="apartments-list">
                             <?php
+
                             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-                            $args = array('posts_per_page' => 10, 'post_type' => 'rent_house', 'post_status' => 'publish','paged' => $paged);
+                            $args = array('posts_per_page' => 10,
+                                'post_type' => 'rent_house',
+                                'post_status' => 'publish',
+                                'paged' => $paged);
                             $the_query = new WP_Query( $args );
                             $p_id=0;
                             $p_count=0;
@@ -35,7 +39,7 @@
                                 $r_page->r_other=get_field('other');
                                 $r_page->r_place=get_field('r_place');
                                 $r_page->r_city=get_field('r_city');
-                                $r_page->r_customplace=get_field('r_customplace');
+                                $r_page->r_place=get_field('r_place');
                                 $r_page->r_customplace=get_field('r_customplace');
                                 $r_page->r_beach_length=get_field('r_beach_length');
                                 $r_page->id=get_the_ID();
@@ -72,10 +76,11 @@
                                                 <span>Площадь <?php  the_field( "square" ); ?>м&sup2;</span>
                                                 <span><?php
                                                     if($r_page->rooms==1) echo  $r_page->rooms. ' спальня';
-                                                    if($r_page->roomsms==2) echo  $r_page->rooms. ' спальни';
-                                                    if($r_page->rooms==3) echo  $r_page->rooms. ' спальни';
-                                                    if($r_page->rooms==4) echo  $r_page->rooms. ' спальни';
-                                                    if($r_page->rooms>4) echo  $r_page->rooms. ' спален'; ?></span>
+                                                    elseif($r_page->rooms==2) echo  $r_page->rooms. ' спальни';
+                                                    elseif($r_page->rooms==3) echo  $r_page->rooms. ' спальни';
+                                                    elseif($r_page->rooms==4) echo  $r_page->rooms. ' спальни';
+                                                    elseif($r_page->rooms>4) echo  $r_page->rooms. ' спален';
+                                                    else echo " &nbsp; ";?></span>
                                                 <div class="price">
                                                     <span>цена, &euro; в месяц</span>
                                                     <span class="sum"><?php  the_field( "r_price" ); ?></span>
@@ -94,44 +99,28 @@
                                         ?>
                                         </a>
                                 </li>
-
                             <?php endwhile;
-
-
-
-
                             else : endif;
-
-
                             wp_reset_query(); ?>
 
                         </ul>
+                        <?php /*Выводдим попапы */ $search->tplRentPop($rent); ?>
                         <div class="paging">
                             <?php
                             if (function_exists(custom_pagination)) {
                                 custom_pagination($the_query->max_num_pages,"",$paged);
                             }
                             ?>
-                          <!--  <span class="caption">Показано 5 из 14</span> -->
                         </div>
-
-                      <?php /*Выводдим попапы */ $search->tplRentPop($rent); ?>
                     </div>
                     <aside class="sidebar">
                         <?php
-
-                        $search->GetCount();
                         $search->tplSearchForm();
                         ?>
                     </aside>
-
-
                 </div>
             </div>
         </section>
-
-
-
         <?php tplFooter(); ?>
     </div>
 

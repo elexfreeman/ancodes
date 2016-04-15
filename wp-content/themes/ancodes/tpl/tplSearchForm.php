@@ -1,6 +1,3 @@
-<?php
-$this->GetCount();
-?>
 <form action="/ajax/" class="filter-form2" name="SearchForm" id="SearchForm">
     <input type="hidden" name="action" value="RentaSearch">
     <h3>Поиск предложений</h3>
@@ -116,24 +113,24 @@ $this->GetCount();
         <div class="slide">
             <ul class="radio-list">
                 <li>
-                    <input checked type="radio" class="radio SearchFormButton" name="length" id="id58" value="Не важно">
-                    <label for="id58">Не важно <span><?php echo $this->BeachLength('Не важно');?></span></label>
+                    <input checked type="radio" class="radio SearchFormButton" name="length" id="idr51" value="Не важно">
+                    <label for="idr51">Не важно <span><?php echo $this->BeachLength('Не важно');?></span></label>
                 </li>
                 <li>
-                    <input type="radio" class="radio SearchFormButton" name="length" id="id58" value="30">
-                    <label for="id58">100 м <span><?php echo $this->BeachLength('100');?></span></label>
+                    <input type="radio" class="radio SearchFormButton" name="length" id="idr52" value="100">
+                    <label for="idr52">100 м <span><?php echo $this->BeachLength('100');?></span></label>
                 </li>
                 <li>
-                    <input type="radio" class="radio SearchFormButton" name="length" id="id58" value="50">
-                    <label for="id58">500 м <span><?php echo $this->BeachLength('500');?></span></label>
+                    <input type="radio" class="radio SearchFormButton" name="length" id="idr53" value="500">
+                    <label for="idr53">500 м <span><?php echo $this->BeachLength('500');?></span></label>
                 </li>
                 <li>
-                    <input type="radio" class="radio SearchFormButton" name="length" id="id59" value="100">
-                    <label for="id59">1000 м <span><?php echo $this->BeachLength('1000');?></span></label>
+                    <input type="radio" class="radio SearchFormButton" name="length" id="idr59" value="1000">
+                    <label for="idr59">1000 м <span><?php echo $this->BeachLength('1000');?></span></label>
                 </li>
                 <li>
-                    <input type="radio" class="radio SearchFormButton" name="length" id="id60" value="200">
-                    <label for="id60">более 1000м <span><?php echo $this->BeachLength('m1000');?></span></label>
+                    <input type="radio" class="radio SearchFormButton" name="length" id="idr60" value="m1000">
+                    <label for="idr60">более 1000м <span><?php echo $this->BeachLength('m1000');?></span></label>
                 </li>
             </ul>
         </div>
@@ -144,13 +141,9 @@ $this->GetCount();
         <div class="slide">
             <div class="form-box">
                 <ul class="check-list">
-                    <!--<li>
-                        <input type="checkbox" value="Домашние животные" class="checkbox SearchFormButton"
-                               id="id49" name="D1">
-                        <label for="id49">Домашние животные <span><?php echo $this->RentaCount->HomeAnimals; ?></span></label>
-                    </li>-->
+
                     <li>
-                        <input type="checkbox" value="ТВ" class="checkbox SearchFormButton" id="id50" name="D2">
+                        <input type="checkbox" value="Телевизор" class="checkbox SearchFormButton" id="id50" name="D2">
                         <label for="id50">Телевизор <span><?php echo $this->RentaCount->TV;?></span></label>
                     </li>
                     <li>
@@ -161,24 +154,28 @@ $this->GetCount();
                         <input type="checkbox" value="Кондиционер" class="checkbox SearchFormButton" id="id52" name="D4">
                         <label for="id52">Кондиционер <span><?php echo $this->RentaCount->Conder;?></span></label>
                     </li>
+                    <li>
+                        <input type="checkbox" value="Гараж/паркинг" class="checkbox SearchFormButton" id="id57" name="D5">
+                        <label for="id57">Гараж/паркинг <span><?php echo $this->RentaCount->Parking;?></span></label>
+                    </li>
                 </ul>
             </div>
             <div class="form-box">
                 <ul class="check-list">
                     <li>
-                        <input type="checkbox" value="Бассейн" class="checkbox SearchFormButton" id="id53" name="D5">
+                        <input type="checkbox" value="Бассейн" class="checkbox SearchFormButton" id="id53" name="D6">
                         <label for="id53">Бассейн <span><?php echo $this->RentaCount->Bassein;?></span></label>
                     </li>
                     <li>
-                        <input type="checkbox" value="Детский бассейн" class="checkbox SearchFormButton" id="id54" name="D6">
-                        <label for="id54">Детский бассейн <span><?php echo $this->RentaCount->ChilBassein;?></span></label>
+                        <input type="checkbox" value="Вид на море" class="checkbox SearchFormButton" id="id54" name="D7">
+                        <label for="id54">Вид на море <span><?php echo $this->RentaCount->VidMore;?></span></label>
                     </li>
                     <li>
-                        <input type="checkbox" value="Закрытый бассейн" class="checkbox SearchFormButton" id="id55" name="D7">
-                        <label for="id55">Закрытый бассейн <span><?php echo $this->RentaCount->ClosedBassein;?></span></label>
+                        <input type="checkbox" value="Барбекю" class="checkbox SearchFormButton" id="id55" name="D8">
+                        <label for="id55">Барбекю <span><?php echo $this->RentaCount->Barbeku;?></span></label>
                     </li>
                     <li>
-                        <input type="checkbox" value="Интернет" class="checkbox SearchFormButton" id="id56" name="D8">
+                        <input type="checkbox" value="Интернет" class="checkbox SearchFormButton" id="id56" name="D9">
                         <label for="id56">Интернет <span><?php echo $this->RentaCount->Internet;?></span></label>
                     </li>
                 </ul>
@@ -191,13 +188,41 @@ $this->GetCount();
             <div class="form-box">
                 <ul class="check-list">
                     <?php
+                    /*Список городов  введеных*/
+                    $args = array('posts_per_page' => 3, 'post_type' => 'rent_house', 'post_status' => 'publish' , 'limit' => 1);
+                    $the_query = new WP_Query( $args );
+                    $p_id=1;
+                    if( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <?php
+                        $key = 'r_customplace';
+                        $field = get_field_object($key);
+                        if(isset($field['choices'])) $choices=$field['choices'];
+                    endwhile; else : endif; wp_reset_query(); ?>
+
+                    <?php
+
                     foreach($this->Cities as $key=>$city)
                     {
                         ?>
                         <li>
                             <input name="City_<?php echo $city->id ?>" type="checkbox"
                                    class="checkbox SearchFormButton" id="id<?php echo $city->id ?>" value="<?php echo $city->url; ?>">
-                            <label for="id<?php echo $city->id ?>"><?php echo $city->the_title; ?> <span><?php echo $this->GetCityCount($city->the_title);?></span></label>
+                            <label for="id<?php echo $city->id ?>"><?php echo $city->the_title; ?>
+                                <span><?php echo $this->GetCityCount($city->the_title);?></span></label>
+                        </li>
+                        <?php
+                    }
+                    ?>
+                    <li>--</li>
+                    <?php
+                    foreach ($choices as $key => $value)
+                    {
+                        ?>
+                        <li>
+                            <input name="City_<?php echo $key ?>" type="checkbox"
+                                   class="checkbox SearchFormButton" id="id<?php echo $key ?>" value="<?php echo $city->url; ?>">
+                            <label for="id<?php echo $key ?>"><?php echo $value; ?>
+                                <span><?php echo $this->GetCityCount($value);?></span></label>
                         </li>
                         <?php
                     }

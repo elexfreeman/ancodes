@@ -3,33 +3,7 @@
     <div class="page">
 
         <header class="header">
-            <div class="main-slider">
-                <div class="tp-banner-container">
-                    <div class="tp-banner" >
-                        <?php
-                        putRevSlider("slider1");
-                       // putRevSlider("media-gallery-two5");
-                        ?>
-                        <?php if ( function_exists( 'get_smooth_slider' ) ) { get_smooth_slider(); } ?>
-                       <!--
-                        <ul>
-                            <?php
-                            $args = array('posts_per_page' => 30, 'post_type' => 'main_page_baner', 'post_status' => 'publish');
-                            $the_query = new WP_Query( $args );
-                            if( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                                <?php $img = get_field('min_img');?>
 
-                                <li data-transition="fadefromright" data-slotamount="5" data-masterspeed="700" >
-
-                                    <img src="<?php echo $img['url']; ?>"  alt="slidebg1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                                </li>
-                            <?php endwhile; else : endif; wp_reset_query(); ?>
-                        </ul>
-                       -->
-                    </div>
-                </div>
-            </div>
             <div class="wrapper">
                 <strong class="logo">
                     <a href="/">Ancodes<span class="sticker">
@@ -87,6 +61,31 @@
                 -->
             </div>
         </header>
+        <div class="main-slider">
+            <div class="tp-banner-container">
+                <div class="tp-banner" >
+                    <?php
+                    require_once "tpl/tplOwnSlider.php";
+                    ?>
+                    <!--
+                        <ul>
+                            <?php
+                    $args = array('posts_per_page' => 30, 'post_type' => 'main_page_baner', 'post_status' => 'publish');
+                    $the_query = new WP_Query( $args );
+                    if( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                                <?php $img = get_field('min_img');?>
+
+                                <li data-transition="fadefromright" data-slotamount="5" data-masterspeed="700" >
+
+                                    <img src="<?php echo $img['url']; ?>"  alt="slidebg1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                                </li>
+                            <?php endwhile; else : endif; wp_reset_query(); ?>
+                        </ul>
+                       -->
+                </div>
+            </div>
+        </div>
         <section class="main">
             <div class="wrapper">
                 <div class="reservation">
@@ -140,7 +139,15 @@
                         </div>
                         <ul class="apartments-list">
                             <?php
-                            $args = array('posts_per_page' => 300, 'post_type' => 'rent_house', 'post_status' => 'publish');
+                            $args = array('posts_per_page' => 300, 'post_type' => 'rent_house', 'post_status' => 'publish'
+                            ,'meta_query'	=> array(
+                                // 'relation'		=> 'AND',
+                                array(
+                                    'key'	 	=> 'show_in_main',
+                                    'value'	  	=> 'Да',
+                                    'compare' 	=> 'LIKE',
+                                ),
+                            ));
                             $the_query = new WP_Query( $args );
                             $p_id=0;
                             $p_count=0;
@@ -165,14 +172,14 @@
                                 $r_page->r_city=get_field('r_city');
                                 $r_page->r_customplace=get_field('r_customplace');
                                 $r_page->r_customplace=get_field('r_customplace');
-                                $r_page->r_beach_length=get_field('r_beach_length');
+                                $r_page->r_beach_length=get_field('beach_length');
                                 $r_page->id=get_the_ID();
                                 $rent[]=$r_page;
 
                                 $mainimg = get_field('r_img'); $p_count++;
                                 $show_in_main=get_field('show_in_main');
-                                if($show_in_main[0]=='Да')
-                                {
+
+
                                     ?>
 
                                     <li>
@@ -228,7 +235,7 @@
                                     </li>
 
                                 <?php
-                                }
+
                                 endwhile; else : endif; wp_reset_query(); ?>
 
                         </ul>
@@ -254,23 +261,21 @@
         <div class="title-holder">
             <h2>Оставить заявку</h2>
         </div>
-        <form action="#" class="feedback-form">
-            <fieldset>
-                <p class="info-text"></p>
-                <input type="text" class="text" placeholder="Ваше имя">
-                <input type="text" class="text" placeholder="Ваша электронная почта">
-                <select class="feedback-theme" data-jcf='{"wrapNative": false}'>
-                    <option class="hideme">Тема заявки</option>
-                    <option>Тема 1</option>
-                    <option>Тема 2</option>
-                </select>
-                <textarea class="text textarea" placeholder="Примечание"></textarea>
-                <div class="submit-row">
-                    <input type="submit" class="submit" value="Отправить">
-                    <p>Наши операторы отвечают на каждое сообщение в течении 5 часов с момента получения.</p>
-                </div>
-            </fieldset>
-        </form>
+        <div style="overflow: auto;" class="feedback-form">
+        <?php echo do_shortcode('[contact-form-7 id="2370" title="formorder1"]'); ?>
+        <a href="javascript:parent.$.fancybox.close();" class="close">Close me</a>
+        </div>
+    </div>
+
+    <a href="#thx" class="application popup-btn2" style="display: none">thx</a>
+
+    <div class="order-popup custom-popup" id="thx">
+        <div class="title-holder">
+            <h2>Спасибо за обращение</h2>
+        </div>
+        <div style="overflow: auto;font-size: 20px;" class="feedback-form">
+            Наш менеджер вскорее свяжется с Вами.
+        </div>
         <a href="javascript:parent.$.fancybox.close();" class="close">Close me</a>
     </div>
 
@@ -279,24 +284,10 @@
         <div class="title-holder" style="background: url('/images/bg-promo02.png') no-repeat;background-size: 100%;">
             <h2>Оставить заявку</h2>
         </div>
-        <form action="#" class="feedback-form">
-            <fieldset>
-                <p class="info-text"></p>
-                <input type="text" class="text" placeholder="Ваше имя">
-                <input type="text" class="text" placeholder="Ваша электронная почта">
-                <select class="feedback-theme" data-jcf='{"wrapNative": false}'>
-                    <option class="hideme">Тема заявки</option>
-                    <option>Тема 1</option>
-                    <option>Тема 2</option>
-                </select>
-                <textarea class="text textarea" placeholder="Примечание"></textarea>
-                <div class="submit-row">
-                    <input type="submit" class="submit" value="Отправить">
-                    <p>Наши операторы отвечают на каждое сообщение в течении 5 часов с момента получения.</p>
-                </div>
-            </fieldset>
-        </form>
-        <a href="javascript:parent.$.fancybox.close();" class="close">Close me</a>
+        <div style="overflow: auto;" class="feedback-form">
+            <?php echo do_shortcode('[contact-form-7 id="2370" title="formorder1"]'); ?>
+            <a href="javascript:parent.$.fancybox.close();" class="close">Close me</a>
+        </div>
     </div>
 
     <div class="info-popup custom-popup" id="info-popup">

@@ -94,17 +94,27 @@ foreach($cities as $city ) {
                     <ul class="photos-list">
                         <?php
                         foreach ($city->s_gallery as $img) {
+
                             ?>
                             <li>
                                 <div class="image">
-                                    <a class="singlegal" rel="2" href="<?php echo $img['url']; ?>">
+                                    <a class="singlegal<?php echo $i; ?>" rel="2" href="<?php echo $img['url']; ?>">
                                         <img src="<?php echo $img['url']; ?>" alt="" width="206">
                                     </a>
                                 </div>
                             </li>
+
                             <?php
                         }
                         ?>
+                        <script>
+                            $(document).ready(function() {
+                                $(".singlegal<?php echo $i ; ?>").fancybox({
+                                    openEffect	: 'none',
+                                    closeEffect	: 'none'
+                                });
+                            });
+                        </script>
                     </ul>
                     <?php echo $city->s_about; ?>
                 </div>
@@ -152,14 +162,24 @@ foreach($cities as $city ) {
                                 ?>
                                 <li>
                                     <div class="image">
-                                        <a class="singlegal" rel="2" href="<?php echo $img['url']; ?>">
+                                        <a class="singlegal<?php echo $i . $j; ?>" rel="2" href="<?php echo $img['url']; ?>">
                                             <img src="<?php echo $img['url']; ?>" alt="" width="206" height="105">
                                         </a>
                                     </div>
                                 </li>
+
                                 <?php
                             }
                             ?>
+                            <script>
+                                $(document).ready(function() {
+                                    console.info('dd<?php echo $i . $j; ?>');
+                                    $(".singlegal<?php echo $i . $j; ?>").fancybox({
+                                        openEffect	: 'none',
+                                        closeEffect	: 'none'
+                                    });
+                                });
+                            </script>
                         </ul>
                         <?php echo $curort->c_description; ?>
                     </div>

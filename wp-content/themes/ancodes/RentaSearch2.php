@@ -39,10 +39,9 @@ class RentaSearch
 
                 $r_page->r_city=get_field('r_city');
                 $r_page->r_customplace=get_field('r_customplace');
-                $r_page->r_place=get_field('r_place');
                 if($r_page->r_customplace!='') $r_page->r_city=$r_page->r_customplace;
 
-                $r_page->r_beach_length=get_field('beach_length');
+                $r_page->r_beach_length=(int)get_field('beach_length');
                 $this->Renta[]=$r_page;
             endwhile;
         else : endif;
@@ -67,22 +66,32 @@ class RentaSearch
             endwhile;
         else : endif;
         wp_reset_query();
-        $this->SetCount();
     }
 
     /*расстояние до пляжа*/
     function BeachLength($l)
     {
-        $count=0;
-        foreach($this->Renta as $renta)
-        {
-           if($renta->r_beach_length==$l) $count++;
-        }
-        return $count;
+        $args = array(
+            'numberposts'	=> -1,
+            'post_type'		=> 'excurs',
+            'post_status' => 'publish',
+            'meta_query'	=> array(
+                // 'relation'		=> 'AND',
+                array(
+                    'key'	 	=> 'beach_length',
+                    'value'	  	=> $l,
+                    'compare' 	=> '=',
+                )
+            ),
+        );
+        $the_query = new WP_Query($args);
+        return $the_query->found_posts;
+
+
     }
 
     /*Выдает кол-ва по типу жилья*/
-    function SetCount()
+    function GetCount()
     {
         $this->RentaCount = new stdClass();
         /*Кол-во всего*/
@@ -174,40 +183,14 @@ class RentaSearch
             /*перебераем города*/
             foreach($this->Cities as $key => $City)
             {
-                if(($renta->r_city==$City->url)and($renta->r_price!='new'))  $this->Cities[$key]->count++;
+                if($renta->r_city==$City->url)  $this->Cities[$key]->count++;
             }
-            /*
-            if($renta->r_customplace!='')
-            {
-                if(isset($this->RentaCount->Customplace[$renta->r_customplace]))
-                {
-                    $this->RentaCount->Customplace[$renta->r_customplace]++;
-                }
-                else
-                {
-                    $this->RentaCount->Customplace[$renta->r_customplace]=1;
-                }
-            }
-            */
-
 
         }
     }
 
-    /*
-    function GetCustomplaceCount($place)
-    {
-        $res=0;
-        if(isset($this->RentaCount->Customplace[$place]))
-        {
-            $res=  $this->RentaCount->Customplace[$place];
-        }
-        return $res;
-    }*/
-
     function GetCityCount($city_name)
     {
-
         foreach($this->Cities as $City)
         {
             if($City->the_title==$city_name)  return $City->count;
@@ -233,7 +216,14 @@ class RentaSearch
     /*Выборка по параметрам*/
     function Search()
     {
-        $this->SearchResult = $this->Renta;
+      //  $this->SearchResult = $this->Renta;
+
+        /*Собираем массив запроса*/
+        $realtions = array('relation'		=> 'AND');
+
+
+
+
         /*Ищем тип жилья*/
         if (isset($_GET['RentaType'])) {
             if ($_GET['RentaType'] == 'all') {
@@ -279,7 +269,7 @@ class RentaSearch
         if( (isset($_GET['length']))and($_GET['length']!='Не важно') )
         {
             foreach ($this->Renta as $i => $r) {
-                if($r->r_beach_length!=$_GET['length'])   unset($this->SearchResult[$i]);
+                if(!$r->r_beach_length==$_GET['length'])   unset($this->SearchResult[$i]);
             }
         }
 
@@ -290,18 +280,21 @@ class RentaSearch
         {
           if($key{0}=='D')  $fields[]=$value;
         }
-
         if(count($fields)>0)
         {
-           foreach($fields as $field)
-           {
-               foreach ($this->Renta as $i => $r)
-               {
-                   if(!in_array($field,$r->r_params)){unset($this->SearchResult[$i]); }
-               }
-           }
-
-
+            foreach ($this->Renta as $i => $r)
+            {
+                /*перебираем все удобства*/
+                $tmp=false;
+                foreach ($r->r_params as $param )
+                {
+                    if(in_array($param,$fields))
+                    {
+                        $tmp=true;
+                    }
+                }
+                if(!$tmp) unset($this->SearchResult[$i]);
+            }
         }
 
 
@@ -319,7 +312,7 @@ class RentaSearch
             {
                 /*перебираем все города*/
 
-                if((!in_array($r->r_city,$fields))and(!in_array($r->r_customplace,$fields)))
+                if(!in_array($r->r_city,$fields))
                 {
                     //echo $r->r_city;
                     unset($this->SearchResult[$i]);
