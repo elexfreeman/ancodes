@@ -267,8 +267,20 @@
         </div>
     </div>
 
-    <a href="#thx" class="application popup-btn2" style="display: none">thx</a>
 
+    <a href="#search" class="application popup-btn2" style="display: none">thx</a>
+
+    <div class="info-popup custom-popup" id="search">
+        <div class="title-holder">
+            <h2>Результаты поиска</h2>
+        </div>
+        <div style="overflow: auto;font-size: 20px;" class="popup-content">
+            Похожих результатов не обнаруженно.
+        </div>
+        <a href="javascript:parent.$.fancybox.close();" class="close">Close me</a>
+    </div>
+
+    <a href="#thx" class="application popup-btn2" style="display: none">thx</a>
     <div class="order-popup custom-popup" id="thx">
         <div class="title-holder">
             <h2>Спасибо за обращение</h2>

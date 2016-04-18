@@ -41,7 +41,8 @@
                                 $r_page->r_city=get_field('r_city');
                                 $r_page->r_place=get_field('r_place');
                                 $r_page->r_customplace=get_field('r_customplace');
-                                $r_page->r_beach_length=get_field('r_beach_length');
+                                $r_page->r_beach_length=get_field('beach_length');
+
                                 $r_page->id=get_the_ID();
                                 $rent[]=$r_page;
                                 ?>

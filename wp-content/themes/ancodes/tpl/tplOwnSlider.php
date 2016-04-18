@@ -11,7 +11,26 @@
 
             <div style="background-image: url('<?php echo $img['url']; ?>');"
                  src="/images/21-max-1920.jpg"
-                 alt="При заказе от 500 рублей ролл в подарок!" class="slider-img">
+                 alt="<?php the_title(); ?>" class="slider-img">
+                <div class="slider-description"
+
+                     style="
+                     <?php $margintop = get_field('margintop');
+                     if($margintop!='') echo "margin-top:".$margintop."px;";
+                     ?>
+
+                     <?php $marginleft = get_field('marginleft');
+                     if($marginleft!='') echo "margin-left:".$marginleft."px;";
+                     ?>
+
+                     <?php $bgcolor = get_field('bgcolor');
+                     if($bgcolor!='') echo "background-color:".$bgcolor.";";
+                     ?>
+                     <?php $width = get_field('width');
+                     if($width!='') echo "width:".$width."%;";
+                     ?>
+                     "
+                    ><?php  the_field( "sl_description" ); ?></div>
             </div>
         </div>
 

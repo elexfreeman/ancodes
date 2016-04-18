@@ -56,7 +56,7 @@ endwhile; else : endif; wp_reset_query();
                                     </ul>
                                 </div>
                                 <div class="tab-content">
-                                    <form action="#" class="quick-search">
+                                    <form action="#search" class="quick-search">
                                         <label>Быстрый поиск по справочнику</label>
                                         <input type="text" class="text" placeholder="Что ищем?">
                                     </form>
@@ -123,7 +123,7 @@ endwhile; else : endif; wp_reset_query();
                                     </ul>
                                 </div>
                                 <div class="tab-content">
-                                    <form action="#" class="quick-search">
+                                    <form action="#search" class="quick-search">
                                         <label>Быстрый поиск по справочнику</label>
                                         <input type="text" class="text" placeholder="Что ищем?">
                                     </form>

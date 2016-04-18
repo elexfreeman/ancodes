@@ -1,12 +1,12 @@
 /*
-Theme Name: ancodes.xmpi.ru
-Theme URI: http://ancodes.xmpi.ru
-Description: Тема Wordpress для сайта ancodes.xmpi.ru
+Theme Name: ancodes.com
+Theme URI: http://ancodes.com
+Description: Тема Wordpress для сайта ancodes.com
 Version: 1.0β
 Author: 
 Tags: none
 
-Theme created for ancodes.xmpi.ru website
+Theme created for ancodes.com website
 */
 
 
@@ -126,11 +126,11 @@ h4{
 /* header */
 .header{
 	font:13px/16px 'lato', Helvetica, sans-serif;
-	background: url(http://ancodes.xmpi.ru/images/img16.jpg) no-repeat 50% 100%;
+	background: url(http://ancodes.com/images/img16.jpg) no-repeat 50% 100%;
 	background-size:cover;
 }
 .about-page .header{
-	background: url(http://ancodes.xmpi.ru/images/img53.jpg) no-repeat 50% 100%;
+	background: url(http://ancodes.com/images/img53.jpg) no-repeat 50% 100%;
 	background-size:cover;
 }
 .home-page .header{
@@ -145,7 +145,7 @@ h4{
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 585px;
+	height: 500px;
 	z-index: 5;
 	overflow: hidden;
 }
@@ -156,7 +156,7 @@ h4{
 	width:194px;
 	height:163px;
 	text-indent:-9999px;
-	background: url(http://ancodes.xmpi.ru/images/logo.png) no-repeat;
+	background: url(http://ancodes.com/images/logo.png) no-repeat;
 	z-index: 100;
 }
 .header .logo a{
@@ -187,7 +187,7 @@ h4{
 	clear:both;
 }
 .tp-banner {
-	height: 585px !important;
+	height: 500px !important;
 	/*width: 1000px;*/
 }
 .language-form{
@@ -198,20 +198,20 @@ h4{
 	float:left;
 	color:#fff;
 	padding:0 0 0 18px;
-	background: url(http://ancodes.xmpi.ru/images/ico01.png) no-repeat 0 3px;
+	background: url(http://ancodes.com/images/ico01.png) no-repeat 0 3px;
 }
 .header .enter{
 	float:right;
 	color:#fff;
 	padding:0 0 0 19px;
 	margin:0 0 0 36px;
-	background: url(http://ancodes.xmpi.ru/images/ico02.png) no-repeat 0 3px;
+	background: url(http://ancodes.com/images/ico02.png) no-repeat 0 3px;
 }
 .header .favorites{
 	float:right;
 	color:#fff;
 	padding:1px 0 0 18px;
-	background: url(http://ancodes.xmpi.ru/images/ico07.png) no-repeat 0 2px;
+	background: url(http://ancodes.com/images/ico07.png) no-repeat 0 2px;
 } 
 .header .favorites .counter{
 	color:#84a7bc;
@@ -257,7 +257,7 @@ h4{
 	overflow:hidden;
 	border:0;
 	margin:2px 18px 0 0;
-	background: url(http://ancodes.xmpi.ru/images/ico03.png) no-repeat;
+	background: url(http://ancodes.com/images/ico03.png) no-repeat;
 }
 .header .search{
 	float:right;
@@ -266,7 +266,7 @@ h4{
 	text-indent:-9999px;
 	overflow:hidden;
 	margin:2px 0 0;
-	background: url(http://ancodes.xmpi.ru/images/ico04.png) no-repeat;
+	background: url(http://ancodes.com/images/ico04.png) no-repeat;
 }
 /* promo */
 .promo{
@@ -292,7 +292,7 @@ h4{
 	font:21px/24px 'lato', Helvetica, sans-serif;
 	color:#fff;
 	text-shadow:0 1px 1px rgba(0,0,0,0.32);
-	background: url(http://ancodes.xmpi.ru/images/bg-promo.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-promo.png) no-repeat;
 }
 .promo-list .item2{background-position:0 -70px;}
 .promo-list .item3{background-position:0 -140px;}
@@ -310,7 +310,7 @@ h4{
 	margin:6px 0 0 11px;
 	text-indent:-9999px;
 	overflow:hidden;
-	background: url(http://ancodes.xmpi.ru/images/ico-arrow01.png) no-repeat;
+	background: url(http://ancodes.com/images/ico-arrow01.png) no-repeat;
 }
 .promo-list  .price{
 	float:right;
@@ -335,7 +335,7 @@ h4{
 	padding:23px 0 0 1000px;
 	margin:0 0 0 -1000px;
 	height:136px;
-	background: url(http://ancodes.xmpi.ru/images/bg-reservation01.jpg) repeat-x 0 100%;
+	background: url(http://ancodes.com/images/bg-reservation01.jpg) repeat-x 0 100%;
 }
 .reservation-list{
 	box-sizing: border-box;
@@ -366,26 +366,26 @@ h4{
 	padding:0 5px 3px 37px;
 	font:700 17px/22px 'lato', Helvetica, sans-serif;
 	color:#173d89;
-	background: url(http://ancodes.xmpi.ru/images/ico-set01.png) no-repeat;
+	background: url(http://ancodes.com/images/ico-set01.png) no-repeat;
 }
 .reservation-list a span{
 	border-bottom:1px solid #9fa9cc;
 }
 .reservation-list .item1{
 	width:141px;
-	background: url(http://ancodes.xmpi.ru/images/bg-reservation03.png) no-repeat 0 100%;
+	background: url(http://ancodes.com/images/bg-reservation03.png) no-repeat 0 100%;
 }
 .reservation-list .item1 a{
 	color:#fff;
 }
 .reservation-list .item2{
 	width:172px;
-	background: url(http://ancodes.xmpi.ru/images/bg-reservation04.png) no-repeat 0 100%;
+	background: url(http://ancodes.com/images/bg-reservation04.png) no-repeat 0 100%;
 }
 .reservation-list .item2 a{background-position:0 -100px;}
 .reservation-list .item3{
 	width:172px;
-	background: url(http://ancodes.xmpi.ru/images/bg-reservation05.png) no-repeat 0 100%;
+	background: url(http://ancodes.com/images/bg-reservation05.png) no-repeat 0 100%;
 }
 .reservation-list .item3 a{
 	background-position:0 -201px;
@@ -393,7 +393,7 @@ h4{
 }
 .reservation-list .item4{
 	width:173px;
-	background: url(http://ancodes.xmpi.ru/images/bg-reservation06.png) no-repeat 0 100%;
+	background: url(http://ancodes.com/images/bg-reservation06.png) no-repeat 0 100%;
 }
 .reservation-list .item4 a{background-position:0 -298px;}
 .reservation .agency{
@@ -404,7 +404,7 @@ h4{
 	margin:0 -1000px 0 0;
 	padding:23px 1000px 0 39px;
 	height:136px;
-	background: url(http://ancodes.xmpi.ru/images/bg-reservation02.jpg) no-repeat 0 100%;
+	background: url(http://ancodes.com/images/bg-reservation02.jpg) no-repeat 0 100%;
 	background-size:cover;
 }
 .reservation .agency h3{
@@ -420,7 +420,7 @@ h4{
 	float:none;
 	font:700 17px/22px 'lato', Helvetica, sans-serif;
 	display:inline-block;
-	background: url(http://ancodes.xmpi.ru/images/ico05.png) no-repeat 0 2px;
+	background: url(http://ancodes.com/images/ico05.png) no-repeat 0 2px;
 }
 .reservation .agency .enter span{
 	border-bottom:1px solid #699e94;
@@ -501,7 +501,7 @@ h4{
 	position: absolute;
 	top: 12px;
 	left: -11px;
-	background: url(http://ancodes.xmpi.ru/images/marker.png) no-repeat;
+	background: url(http://ancodes.com/images/marker.png) no-repeat;
 	width: 20px;
 	height: 18px;
 	text-indent: -9999px;
@@ -520,7 +520,7 @@ h4{
 	float:right;
 	width:24px;
 	height:24px;
-	background: url(http://ancodes.xmpi.ru/images/bg-star.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-star.png) no-repeat;
 	text-indent:-9999px;
 	overflow:hidden;
 }
@@ -541,7 +541,7 @@ h4{
 	right:0;
 	width:65px;
 	height:24px;
-	background: url(http://ancodes.xmpi.ru/images/bg-location.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-location.png) no-repeat;
 }
 .apartments-list .seller{
 	display:block;
@@ -578,7 +578,7 @@ h4{
 	margin:0 0 37px;
 	border-bottom:2px solid #fff;
 	border-radius:3px;
-	background: url(http://ancodes.xmpi.ru/images/bg-promo02.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-promo02.png) no-repeat;
 	background-size:cover;
 	position:relative;
 }
@@ -632,13 +632,13 @@ h4{
 	font-weight:700;
 	color:#fff;
 	padding:0 0 0 20px;
-	background: url(http://ancodes.xmpi.ru/images/ico06.png) no-repeat;
+	background: url(http://ancodes.com/images/ico06.png) no-repeat;
 }
 .promo-box .application span{
 	border-bottom:1px solid rgba(255,255,255,0.2);
 }
 .promo-box.box2{
-	background: url(http://ancodes.xmpi.ru/images/bg-promo03.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-promo03.png) no-repeat;
 	background-size:cover;
 }
 .promo-box.box2:after{
@@ -648,7 +648,7 @@ h4{
 	background:#c4d5e3;
 }
 .promo-box.box3{
-	background: url(http://ancodes.xmpi.ru/images/bg-promo04.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-promo04.png) no-repeat;
 	background-size:cover;
 }
 .promo-box.box3:after{
@@ -661,7 +661,7 @@ h4{
 	font-weight:700;
 	color:#fff;
 	padding:0 0 0 20px;
-	background: url(http://ancodes.xmpi.ru/images/ico-arrow02.png) no-repeat 0 3px;
+	background: url(http://ancodes.com/images/ico-arrow02.png) no-repeat 0 3px;
 }
 .promo-box .see-more span{
 	border-bottom:1px solid rgba(255,255,255,0.2);
@@ -702,7 +702,7 @@ h4{
 .read-more{
 	font-weight:700;
 	padding:0 0 0 22px;
-	background: url(http://ancodes.xmpi.ru/images/ico-arrow03.png) no-repeat 0 4px;
+	background: url(http://ancodes.com/images/ico-arrow03.png) no-repeat 0 4px;
 }
 .read-more span{
 	border-bottom:1px solid #afbacd;
@@ -745,7 +745,7 @@ h4{
 }
 .mb-panel.current{
 	opacity:1;
-	background:  url(http://ancodes.xmpi.ru/images/bg-weather.png) !important;
+	background:  url(http://ancodes.com/images/bg-weather.png) !important;
 }
 #weather-slider{
 	list-style:none;
@@ -758,7 +758,7 @@ h4{
 	padding:12px 0 16px 30px;
 	color:#fff;
 	font:700 14px/16px 'lato', Helvetica, sans-serif;
-	background:  url('http://ancodes.xmpi.ru/images/weather-gradient.png'), url(http://ancodes.xmpi.ru/images/bg-weather.png);
+	background:  url('http://ancodes.com/images/weather-gradient.png'), url(http://ancodes.com/images/bg-weather.png);
 background-position: repeat, no-repeat;
 }
 #weather-slider .title{
@@ -824,7 +824,7 @@ background-position: repeat, no-repeat;
 	top:2px;
 	width:14px;
 	height:15px;
-	background: url(http://ancodes.xmpi.ru/images/bg-quotes.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-quotes.png) no-repeat;
 }
 .reviews-list blockquote cite{
 	display:block;
@@ -966,7 +966,7 @@ background-position: repeat, no-repeat;
 	height:43px;
 	text-indent:-9999px;
 	overflow:hidden;
-	background: url(http://ancodes.xmpi.ru/images/ico-social.png) no-repeat;
+	background: url(http://ancodes.com/images/ico-social.png) no-repeat;
 }
 .social-list .fb a{background-position:-54px 0;}
 .social-list .vk a{background-position:-109px 0;}
@@ -1014,7 +1014,7 @@ background-position: repeat, no-repeat;
 	height:41px;
 	text-indent:-9999px;
 	overflow:hidden;
-	background: url(http://ancodes.xmpi.ru/images/ico-payments.png) no-repeat;
+	background: url(http://ancodes.com/images/ico-payments.png) no-repeat;
 }
 .payments-list .m-card a, .payments-list .m-card span{
 	background-position:-85px 0;
@@ -1069,7 +1069,7 @@ background-position: repeat, no-repeat;
 }
 .breadcrumbs li:first-child a{
 	padding:0 0 0 19px;
-	background: url(http://ancodes.xmpi.ru/images/ico08.png) no-repeat 0 2px;
+	background: url(http://ancodes.com/images/ico08.png) no-repeat 0 2px;
 }
 /* reservation */
 .header .reservation .client{
@@ -1307,7 +1307,7 @@ background-position: repeat, no-repeat;
 .photo-gallery-popup .loading span{
 	display:inline-block;
 	padding:16px 0 17px;
-	background: url(http://ancodes.xmpi.ru/images/ico10.png) no-repeat 50% 0;
+	background: url(http://ancodes.com/images/ico10.png) no-repeat 50% 0;
 }
 /* cities-list */
 .cities-gallery .mask{
@@ -1458,7 +1458,7 @@ background-position: repeat, no-repeat;
 	height: 29px;
 	text-indent: -9999px;
 	overflow: hidden;
-	background: url(http://ancodes.xmpi.ru/images/ico-popup.png) no-repeat;
+	background: url(http://ancodes.com/images/ico-popup.png) no-repeat;
 }
 .resort-info .photos-list{
 	margin: 0 -9px;
@@ -1482,7 +1482,7 @@ background-position: repeat, no-repeat;
 	display: block;
 	width: 653px;
 	height: 51px;
-	background: url(http://ancodes.xmpi.ru/images/bg-blockquote.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-blockquote.png) no-repeat;
 	margin: 26px 0 22px -6px;
 	text-align: center;
 	padding: 15px 10px; 
@@ -1522,7 +1522,7 @@ background-position: repeat, no-repeat;
 	overflow: hidden;
 	text-align: right;
 	margin: 0;
-	background: url(http://ancodes.xmpi.ru/images/bg-border.png) repeat-x 0 80%;
+	background: url(http://ancodes.com/images/bg-border.png) repeat-x 0 80%;
 }
 .coordinates-list dd span{
 	background: #fff;
@@ -1760,7 +1760,7 @@ background-position: repeat, no-repeat;
 	clear:both;
 }
 .social-colored a{
-	background: url(http://ancodes.xmpi.ru/images/ico-social-colored.png) no-repeat;
+	background: url(http://ancodes.com/images/ico-social-colored.png) no-repeat;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 	border-radius: 50%;
 }
@@ -1809,7 +1809,7 @@ background-position: repeat, no-repeat;
 .order-popup .title-holder{
 	position: relative;
 	color: #fff;
-	background: url(http://ancodes.xmpi.ru/images/bg-title.jpg) no-repeat;
+	background: url(http://ancodes.com/images/bg-title.jpg) no-repeat;
 	margin: -1px -1px 0;
 	height: 130px;
 	border-radius:2px 2px 0 0;
@@ -1831,7 +1831,7 @@ background-position: repeat, no-repeat;
 	position: absolute;
 	top: 45px;
 	right: 40px;
-	background: url(http://ancodes.xmpi.ru/images/btn-close02.png) no-repeat;
+	background: url(http://ancodes.com/images/btn-close02.png) no-repeat;
 	width: 33px;
 	height: 33px;
 	text-indent: -9999px;
@@ -1859,7 +1859,7 @@ background-position: repeat, no-repeat;
 .comments-popup .title-holder{
 	position: relative;
 	color: #fff;
-	background: url(http://ancodes.xmpi.ru/images/bg-title02.jpg) no-repeat;
+	background: url(http://ancodes.com/images/bg-title02.jpg) no-repeat;
 	margin: -1px -1px 0;
 	height: 130px;
 	border-radius:2px 2px 0 0;
@@ -1870,7 +1870,7 @@ background-position: repeat, no-repeat;
 	text-shadow:1px 1px 1px rgba(0,0,0,0.4);
 }
 .comments-popup .close{
-	background: url(http://ancodes.xmpi.ru/images/btn-close03.png) no-repeat;
+	background: url(http://ancodes.com/images/btn-close03.png) no-repeat;
 	width: 35px;
 	height: 35px;
 }
@@ -1928,7 +1928,7 @@ background-position: repeat, no-repeat;
 	margin: -25px auto 0;
 	font-size: 21px;
 	color: #234c91;
-	background: url(http://ancodes.xmpi.ru/images/ico-load.png) no-repeat 50% 0;
+	background: url(http://ancodes.com/images/ico-load.png) no-repeat 50% 0;
 }
 .apartments-popup{
 	display: none;
@@ -1947,7 +1947,7 @@ background-position: repeat, no-repeat;
 	border-bottom: 2px solid #dadcdf;
 }
 .apartments-popup .title-wrap .star{
-	background: url(http://ancodes.xmpi.ru/images/bg-star02.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-star02.png) no-repeat;
 	width: 37px;
 	height: 37px;
 	display: inline-block;
@@ -1985,11 +1985,11 @@ background-position: repeat, no-repeat;
 	padding: 0 0 10px 19px;
 	color: #b9c1cc;
 	font-size: 15px;
-	background: url(http://ancodes.xmpi.ru/images/ico15.png) no-repeat 0 4px;
+	background: url(http://ancodes.com/images/ico15.png) no-repeat 0 4px;
 }
 .parameters-list .staffed{
 	color: #465061;
-	background: url(http://ancodes.xmpi.ru/images/ico.png) no-repeat 0 5px;
+	background: url(http://ancodes.com/images/ico.png) no-repeat 0 5px;
 }
 .about-info{
 	overflow: hidden;
@@ -2112,7 +2112,7 @@ background-position: repeat, no-repeat;
 	content: "";
 	width: 22px;
 	height: 22px;
-	background: url(http://ancodes.xmpi.ru/images/bg-counters.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-counters.png) no-repeat;
 }
 .social-counters .ok{
 	background: #fac69d;
@@ -2184,7 +2184,7 @@ background-position: repeat, no-repeat;
 	border:1px solid #dadcdf;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 	border-radius: 1px;
-	background: url(http://ancodes.xmpi.ru/images/bg-input.png) no-repeat 91px 6px;
+	background: url(http://ancodes.com/images/bg-input.png) no-repeat 91px 6px;
 	color: #465061;
 	font-size: 13px;
 	padding: 0 25px 0 7px;
@@ -2206,7 +2206,7 @@ background-position: repeat, no-repeat;
 	font-size: 13px;
 }
 .filter-form2 .jcf-select .jcf-select-opener{
-	background: url(http://ancodes.xmpi.ru/images/bg-arrow02.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-arrow02.png) no-repeat;
 	width: 6px;
 	height: 3px;
 	content: "";
@@ -2228,7 +2228,7 @@ background-position: repeat, no-repeat;
 	top: 8px;
 	left: -10px;
 	content: "";
-	background: url(http://ancodes.xmpi.ru/images/bg-arrow.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-arrow.png) no-repeat;
 	width: 5px;
 	height: 3px;
 }
@@ -2318,7 +2318,7 @@ background-position: repeat, no-repeat;
 	top: 0;
 	left: 0;
 	content: "";
-	background: url(http://ancodes.xmpi.ru/images/bg-check.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-check.png) no-repeat;
 	width: 16px;
 	height: 16px;
 }
@@ -2431,7 +2431,7 @@ background-position: repeat, no-repeat;
 	position: absolute;
 	top: 12px;
 	right: 10px;
-	background: url(http://ancodes.xmpi.ru/images/bg-star.png) no-repeat;
+	background: url(http://ancodes.com/images/bg-star.png) no-repeat;
 	width: 25px;
 	height: 24px;
 	text-indent: -9999px;
@@ -2450,7 +2450,7 @@ background-position: repeat, no-repeat;
 .info-popup .title-holder{
 	position: relative;
 	color: #fff;
-	background: url(http://ancodes.xmpi.ru/images/bg-title03.jpg) no-repeat;
+	background: url(http://ancodes.com/images/bg-title03.jpg) no-repeat;
 	margin: -1px -1px 0;
 	height: 130px;
 	border-radius:2px 2px 0 0;
@@ -2461,7 +2461,7 @@ background-position: repeat, no-repeat;
 	text-shadow:1px 1px 1px rgba(0,0,0,0.4);
 }
 .info-popup .close{
-	background: url(http://ancodes.xmpi.ru/images/btn-close03.png) no-repeat;
+	background: url(http://ancodes.com/images/btn-close03.png) no-repeat;
 	width: 35px;
 	height: 35px;
 }
@@ -2665,4 +2665,13 @@ a.apartments-popup-link {
 	border: 1px solid #cccfd3;
 	box-shadow: 0 1px 1px #cccfd3;
 	margin: 0 0 15px;
+}
+.slider-description
+{
+
+	padding: 20px;
+	color:#fff;
+	display: inline-block;
+	background-color: rgba(89, 172, 226, 0.7);;
+	width: 30%;
 }

@@ -9,5 +9,9 @@
  */
 class SearchInDirectory
 {
+    public function search()
+    {
+
+    }
 
 }
