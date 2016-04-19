@@ -212,17 +212,15 @@
                         </li>
                         <?php
                     }
-                    ?>
-                    <li>--</li>
-                    <?php
+
                     foreach ($choices as $key => $value)
                     {
                         ?>
                         <li>
                             <input name="City_<?php echo $key ?>" type="checkbox"
-                                   class="checkbox SearchFormButton" id="id<?php echo $key ?>" value="<?php echo $city->url; ?>">
+                                   class="checkbox SearchFormButton" id="id<?php echo $key ?>" value="<?php echo $key; ?>">
                             <label for="id<?php echo $key ?>"><?php echo $value; ?>
-                                <span><?php echo $this->GetCityCount($value);?></span></label>
+                                <span><?php echo $this->GetCustomplaceCount($key);?></span></label>
                         </li>
                         <?php
                     }

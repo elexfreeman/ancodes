@@ -16,7 +16,7 @@ var RentaSearch = [];
 RentaSearch.Search = function()
 {
     /*Собираем данные с формы*/
-
+    $(".loader").show();
     var s = $('#SearchForm').serializeArray();
     $('input').prop('disabled',true);
     $.ajax({
@@ -37,10 +37,12 @@ RentaSearch.Search = function()
             /*Делаем опять кликабельными*/
             $('a.apartments-popup-link').css('pointer-events','auto');
             $('input').prop('disabled',false);
+            $(".loader").hide();
         },
         error:  function(xhr, str){
             alert('Возникла ошибка: ' + xhr.responseCode);
             $('input').prop('disabled',false);
+            $(".loader").hide();
         }
     });
 

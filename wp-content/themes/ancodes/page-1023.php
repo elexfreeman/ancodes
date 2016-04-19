@@ -5,6 +5,7 @@
         <section class="main">
             <div class="wrapper">
                 <div class="main-holder">
+                    <div class="loader"></div>
                     <div class="content">
                         <div class="title">
                             <h2>Дома, виллы и апартаменты</h2>

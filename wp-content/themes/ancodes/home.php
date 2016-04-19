@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <?php $search = new RentaSearch(); ?>
+<?php $searchInfoT = new SearchInDirectory(); ?>
     <div class="page">
 
         <header class="header">
@@ -275,7 +276,7 @@
             <h2>Результаты поиска</h2>
         </div>
         <div style="overflow: auto;font-size: 20px;" class="popup-content">
-            Похожих результатов не обнаруженно.
+            <?php $searchInfoT->search(); ?>
         </div>
         <a href="javascript:parent.$.fancybox.close();" class="close">Close me</a>
     </div>

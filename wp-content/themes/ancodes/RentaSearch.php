@@ -176,7 +176,7 @@ class RentaSearch
             {
                 if(($renta->r_city==$City->url)and($renta->r_price!='new'))  $this->Cities[$key]->count++;
             }
-            /*
+
             if($renta->r_customplace!='')
             {
                 if(isset($this->RentaCount->Customplace[$renta->r_customplace]))
@@ -188,13 +188,13 @@ class RentaSearch
                     $this->RentaCount->Customplace[$renta->r_customplace]=1;
                 }
             }
-            */
+
 
 
         }
     }
 
-    /*
+
     function GetCustomplaceCount($place)
     {
         $res=0;
@@ -203,7 +203,7 @@ class RentaSearch
             $res=  $this->RentaCount->Customplace[$place];
         }
         return $res;
-    }*/
+    }
 
     function GetCityCount($city_name)
     {

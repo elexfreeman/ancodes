@@ -1,6 +1,7 @@
+<?php $searchInfoT = new SearchInDirectory(); ?>
 <?php
 $info_turists=Array();
-$args = array( 'post_type' => 'info_turist', 'post_status' => 'publish' ,'orderby' => 'menu_order title' );
+$args = array('posts_per_page' => 999, 'post_type' => 'info_turist', 'post_status' => 'publish' ,'orderby' => 'menu_order title' );
 $the_query = new WP_Query( $args );
 $exc_i=0;
 if( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query->the_post();
@@ -19,7 +20,9 @@ endwhile; else : endif; wp_reset_query();
 ?>
 
 <div class="promo-box box3">
-    <h3>Справочник туриста</h3>
+    <h3>
+
+        Справочник туриста</h3>
     <div class="two-columns">
         <ul>
             <?php
@@ -37,7 +40,7 @@ endwhile; else : endif; wp_reset_query();
                     ?>
                     <div class="info-popup custom-popup" id="exct<?php echo $info_turist->id; ?>">
                         <div class="title-holder">
-                            <h2>Справочник туриста</h2>
+                            <h2><?php $searchInfoT->GetLink();?>Справочник туриста</h2>
                         </div>
                         <div class="popup-content">
                             <div class="wrap">
@@ -104,7 +107,7 @@ endwhile; else : endif; wp_reset_query();
 
                     <div class="info-popup custom-popup" id="info_turist<?php echo $info_turist->id; ?>">
                         <div class="title-holder">
-                            <h2>Справочник туриста</h2>
+                            <h2><?php $searchInfoT->GetLink();?>Справочник туриста</h2>
                         </div>
                         <div class="popup-content">
                             <div class="wrap">
@@ -125,7 +128,7 @@ endwhile; else : endif; wp_reset_query();
                                 <div class="tab-content">
                                     <form action="#search" class="quick-search">
                                         <label>Быстрый поиск по справочнику</label>
-                                        <input type="text" class="text" placeholder="Что ищем?">
+                                        <input name="search_string" type="text" class="text" placeholder="Что ищем?">
                                     </form>
                                     <h5><?php echo $info_turist->title;?></h5>
                                     <div class="modalContent">
@@ -149,7 +152,7 @@ endwhile; else : endif; wp_reset_query();
                     ?>
                     <div class="info-popup custom-popup" id="info_turist<?php echo $info_turist->id; ?>">
                         <div class="title-holder">
-                            <h2>Справочник туриста</h2>
+                            <h2><?php $searchInfoT->GetLink();?>Справочник туриста</h2>
                         </div>
                         <div class="popup-content">
                             <div class="wrap">

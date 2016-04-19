@@ -122,7 +122,9 @@
                         </li>
                     </ul>
 
-                    <?php if($r->r_beach_length!='') {?>
+                    <?php if($r->r_beach_length!='') {
+                        if($r->r_beach_length=='m1000') $r->r_beach_length='более 1000';
+                        ?>
                         <h4>Расстояние до пляжа: <?php echo $r->r_beach_length;  ?> м.</h4>
                     <?php }?>
 

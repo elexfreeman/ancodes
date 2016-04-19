@@ -2675,3 +2675,21 @@ a.apartments-popup-link {
 	background-color: rgba(89, 172, 226, 0.7);;
 	width: 30%;
 }
+
+.search-back
+{
+	font-size: 21px;
+	margin-right: 10px;
+	color: #fff;
+}
+
+.loader
+{
+	width: 692px;
+	height: 100%;
+	position: absolute;
+	background-color: rgba(198, 222, 239, 0.53);
+	z-index: 10000;
+	margin-left: -13px;
+	display: none;
+}
