@@ -2,7 +2,7 @@
 <?php
 if (is_user_logged_in()) {
     ?>
-    <a class="enter" href="<?php echo wp_logout_url(get_permalink()); ?>"><span>Выход</span></a>
+    <a class="enter" href="<?php echo wp_logout_url("/"); ?>"><span>Выход</span></a>
     <?php
 } else {
     ?>

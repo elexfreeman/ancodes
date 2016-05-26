@@ -41,7 +41,7 @@ $this->Search();
                             }
                             ?>
 
-                            <span class="location"><?php echo $r->the_title; ?></span>
+                            <span class="location"><?php  echo $r->rent_type; ?> <?php echo $r->the_title; ?></span>
 
                         </div>
                         <!--<span class="seller">Локация </span> -->

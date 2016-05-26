@@ -1,4 +1,5 @@
 <?php
+/*
 if (!isset($_COOKIE['auth_key']) OR !trim($_COOKIE['auth_key']))
 {
     if (isset($_POST['f_pass']) AND ($_POST['f_pass']=='1qazxsw2'))
@@ -15,7 +16,7 @@ else
         setcookie('auth_key', NULL, -1);
         Header('Location: http://ancodes.com/');
     }
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html>

@@ -15,6 +15,7 @@
                         .nav li {
                             float: left;
                             padding: 0 13px 0 20px;
+                        }
                     </style>
                 <?php
                 }

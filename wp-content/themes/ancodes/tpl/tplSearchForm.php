@@ -186,6 +186,8 @@
         <a href="#" class="opener">Местоположение</a>
         <div class="slide">
             <div class="form-box">
+                <pre style="display: none;"><?php print_r($this->Cities) ?></pre>
+
                 <ul class="check-list">
                     <?php
                     /*Список городов  введеных*/

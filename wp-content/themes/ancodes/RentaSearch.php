@@ -40,7 +40,7 @@ class RentaSearch
                 $r_page->r_city=get_field('r_city');
                 $r_page->r_customplace=get_field('r_customplace');
                 $r_page->r_place=get_field('r_place');
-                if($r_page->r_customplace!='') $r_page->r_city=$r_page->r_customplace;
+                //if($r_page->r_customplace!='') $r_page->r_city=$r_page->r_customplace;
 
                 $r_page->r_beach_length=get_field('beach_length');
                 $this->Renta[]=$r_page;
@@ -188,10 +188,8 @@ class RentaSearch
                     $this->RentaCount->Customplace[$renta->r_customplace]=1;
                 }
             }
-
-
-
         }
+
     }
 
 

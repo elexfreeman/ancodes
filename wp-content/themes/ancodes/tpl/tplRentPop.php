@@ -74,12 +74,15 @@
                     }
                     ?>
                 </h2>
-                <span class="rent">Локация <span class="Hb"><?php   if($r->r_place=='new') echo $r->r_customplace; else
+                <span class="rent">Локация <span class="Hb"><?php
+                        if($r->r_place=='new') echo $r->r_customplace; else
                     {
                         $r->r_city=explode('/',urldecode($r->r_city));
+                        echo $r->r_city[count($r->r_city)-2];
 
                     }
-                        echo $r->r_city[count($r->r_city)-2]; ?></span></span>
+
+                         ?></span></span>
             </div>
             <div class="wrap">
                 <div class="parameters">

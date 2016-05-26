@@ -147,6 +147,8 @@ function WeatherConvertDate($date)
 
 }
 
+require_once "YahooWeather.php";
+
 //*******-*-*-*-*-*-*-*-*-*-*-*-*-*
 //          Шаблоны
 function GetSinglePageHeader()

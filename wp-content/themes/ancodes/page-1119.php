@@ -4,6 +4,7 @@
         <section class="main">
             <div class="wrapper">
                 <div class="main-holder">
+                    <div class="loader"></div>
                     <div class="content">
                         <div class="title">
                             <h2>Избранное</h2>
@@ -16,7 +17,7 @@
                     <aside class="sidebar">
                         <?php
                         $s = new RentaSearch();
-                        $s->GetCount();
+                      //  $s->GetCount();
                         $s->tplSearchForm();
                         ?>
                     </aside>
