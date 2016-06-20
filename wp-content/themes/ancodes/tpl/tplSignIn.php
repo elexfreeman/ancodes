@@ -2,11 +2,11 @@
 <?php
 if (is_user_logged_in()) {
     ?>
-    <a class="enter" href="<?php echo wp_logout_url("/"); ?>"><span>Выход</span></a>
+    <a class="enter" style="display: none;" href="<?php echo wp_logout_url("/"); ?>"><span>Выход</span></a>
     <?php
 } else {
     ?>
-    <a href="#sign-in" class="enter popup-btn">
+    <a href="#sign-in" class="enter popup-btn" style="display: none;">
         <span>Вход для агентств</span>
     </a>
     <?php

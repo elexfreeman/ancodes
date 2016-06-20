@@ -216,14 +216,7 @@ class RentaSearch
     /*Выборка по параметрам*/
     function Search()
     {
-      //  $this->SearchResult = $this->Renta;
-
-        /*Собираем массив запроса*/
-        $realtions = array('relation'		=> 'AND');
-
-
-
-
+        $this->SearchResult = $this->Renta;
         /*Ищем тип жилья*/
         if (isset($_GET['RentaType'])) {
             if ($_GET['RentaType'] == 'all') {

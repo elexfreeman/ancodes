@@ -276,6 +276,7 @@ require_once 'Favorites.php';
 require_once 'RentaSearch.php';
 require_once 'ExSearch.php';
 require_once 'SearchInDirectory.php';
+require_once 'SiteSearch.php';
 
 function custom_pagination($numpages = '', $pagerange = '', $paged='') {
 

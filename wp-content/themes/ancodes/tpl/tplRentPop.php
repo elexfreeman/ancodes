@@ -113,7 +113,7 @@
                         <li>
                             <span class="title">стоимость</span>
                             <span class="price"><?php  echo $r->r_price; ?></span>
-                            <span class="value">&euro; в месяц</span>
+                            <span class="value">&euro; за неделю</span>
                         </li>
                         <li>
                             <span class="title">площадь м<sup>2</sup></span>

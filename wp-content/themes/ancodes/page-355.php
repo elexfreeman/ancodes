@@ -51,7 +51,9 @@ if ( isset($private) && $private == '1') { if ( is_user_logged_in() ) { ?>
                                     <h3><?php the_title(); ?></h3>
                                     <span class="date"><?php echo NewsConvertDate(get_field( "date" )); ?></span>
                                     <div class="holder">
-                                        <div class="image"><img src="<?php echo $mainimg['sizes']['large']; ?>" alt="#" width="176" style="height: auto;" /></div>
+                                        <div class="image">
+                                            <img src="<?php echo $mainimg['sizes']['large']; ?>" alt="#" width="176" style="height: auto;" />
+                                        </div>
                                         <div class="text">
                                             <p><?php the_field( "short_anons" ); ?></p>
                                             <a href="#news-popup<?php echo $p_id;$p_id++;?>" class="read-more news-popup-link" data-fancybox-group="news-gallery"><span>Подробнее</span></a>
@@ -69,7 +71,7 @@ if ( isset($private) && $private == '1') { if ( is_user_logged_in() ) { ?>
                                         <div class="image"><img src="<?php echo $mainimg['sizes']['large']; ?>" alt="#" width="176" style="height: auto;" /></div>
                                         <div class="text">
                                             <p><?php the_field( "short_anons" ); ?></p>
-                                            <a href="#news-popup<?php echo $p_id;$p_id++;?>" class="read-more news-popup-link" data-fancybox-group="news-gallery"><span>Подробнее</span></a>
+                                            <a href="#news-popup<?php echo get_the_ID();?>" class="read-more news-popup-link" data-fancybox-group="news-gallery"><span>Подробнее</span></a>
                                         </div>
                                     </div>
                                 </li>
@@ -114,7 +116,7 @@ if ( isset($private) && $private == '1') { if ( is_user_logged_in() ) { ?>
 
     <?php $mainimg = get_field('photo');?>
 
-    <div class="photo-gallery-popup news-popup" id="news-popup<?php echo $p_id;$p_id++;?>" title="<?php the_title(); ?>">
+    <div class="photo-gallery-popup news-popup" id="news-popup<?php echo get_the_ID();?>" title="<?php the_title(); ?>">
         <span class="prev-text">предыдущая<br/>новость</span>
         <span class="next-text">следующая<br/>новость</span>
         <div class="title-wrap">
@@ -139,7 +141,7 @@ if ( isset($private) && $private == '1') { if ( is_user_logged_in() ) { ?>
 
     <?php $mainimg = get_field('photo');?>
 
-    <div class="photo-gallery-popup news-popup" id="news-popup<?php echo $p_id;$p_id++;?>" title="<?php the_title(); ?>">
+    <div class="photo-gallery-popup news-popup" id="news-popup<?php echo get_the_ID();?>" title="<?php the_title(); ?>">
         <span class="prev-text">предыдущая<br/>новость</span>
         <span class="next-text">следующая<br/>новость</span>
         <div class="title-wrap">

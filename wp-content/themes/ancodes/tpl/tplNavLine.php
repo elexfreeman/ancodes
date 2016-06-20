@@ -24,6 +24,13 @@
                 <li><a href="/ourcontakts/">Контакты</a></li>
             </ul>
         </nav>
-        <a style="display: none" href="/rent" class="search">search</a>
+        <span onclick="$('.search-input-block').fadeIn();"  class="search">search</span>
+        <div class="search-input-block" >
+            <form action="/search-result">
+              <span class="search-close" onclick="$('.search-input-block').fadeOut();">X</span>
+            <input type="text" name="searchString" />
+            <button type="submit">Найти</button>
+            </form>
+        </div>
     </div>
 </div>

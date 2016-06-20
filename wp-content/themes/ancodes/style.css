@@ -260,6 +260,7 @@ h4{
 	background: url(http://ancodes.com/images/ico03.png) no-repeat;
 }
 .header .search{
+	cursor: pointer;
 	float:right;
 	width:16px;
 	height:16px;
@@ -2692,4 +2693,45 @@ a.apartments-popup-link {
 	z-index: 10000;
 	margin-left: -13px;
 	display: none;
+}
+
+.search-input-block
+{
+	padding: 17px;
+	display: none;
+	border: 1px solid #ddd;
+	width: 277px;
+	position: absolute;
+	margin-left: 692px;
+	margin-top: 25px;
+	background-color: #eef6fc;
+}
+
+.search-input-block input
+{
+	padding: 12px;
+	width: 233px;
+}
+
+.search-close
+{
+	position: absolute;
+	margin-left: 238px;
+	margin-top: -18px;
+	cursor: pointer;
+	border: 1px solid #ddd;
+	padding: 5px;
+}
+
+.search-input-block button
+{
+	float: right;
+	margin-right: 8px;
+	padding: 5px;
+	border: 1px solid #dae8ff;
+	margin-top: 13px;
+	color: #325999;
+	background-color: #eef6fc;
+	width: 85px;
+}
 }

@@ -94,7 +94,7 @@ foreach($cities as $city ) {
                     <ul class="photos-list">
                         <?php
                         foreach ($city->s_gallery as $img) {
-
+                            
                             ?>
                             <li>
                                 <div class="image">

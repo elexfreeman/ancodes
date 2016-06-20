@@ -1,12 +1,13 @@
-function show_me(id){
+function show_me(id,j){
+	console.info(id+j);
 		if (id=='all'){
-			$('.main-city-info').show();
-			$('.resort-info').hide();
+			$('.main-city-info'+j).show();
+			$('.rr-i-'+j).hide();
 		}
 		else {
-			$('.main-city-info').hide();
-			$('.resort-info').hide();
-			$('.resort'+id).show();
+			$('.main-city-info'+id).hide();
+			$('.rr-i-'+id).hide();
+			$('.resort'+id+j).show();
 		}
 }
 
@@ -49,22 +50,12 @@ function show_me(id){
 });*/
 
 
-$( window ).resize(function() {
-	var win_w = $(window).width();
-	$('.main-slider').css('width',$('.page').width());
-});
+
 
 
 $(function() {
 	/*Делаем опять кликабельными*/
 	$('a.apartments-popup-link').css('pointer-events','auto');
-
-
-
-		var win_w = $(window).width();
-		$('.main-slider').css('width',$('.page').width());
-
-
 
 
 });

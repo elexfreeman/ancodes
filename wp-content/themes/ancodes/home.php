@@ -227,7 +227,7 @@
                                                          ?></span>
 
                                                     <div class="price">
-                                                        <span>цена, &euro; в месяц</span>
+                                                        <span>цена, &euro; за неделю</span>
                                                         <span class="sum"><?php the_field("r_price"); ?></span>
                                                     </div>
                                                 </div>

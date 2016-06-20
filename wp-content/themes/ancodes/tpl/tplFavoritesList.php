@@ -42,7 +42,7 @@ foreach($f_list as $favorit)
                             ?></span>
 
                         <div class="price">
-                            <span>цена, &euro; в месяц</span>
+                            <span>цена, &euro; за неделю</span>
                             <span class="sum"><?php echo $favorit->r_price; ?></span>
                         </div>
                     </div>
